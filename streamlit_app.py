@@ -14,19 +14,34 @@
 # # Display the customized message
 # st.write('Customized Message:', user_input)
 
-    st.title('Snowflake Chatbot')
+###############################################
+import streamlit as st
 
+# Streamlit UI
+def main():
+    st.title('Chat Bot')
+
+    # Chat history
+    chat_history = []
+
+    # User input field
     user_input = st.text_input('You:', '')
 
+    # Send button
     if st.button('Send'):
         if user_input:
-            # Display user input
-            st.write('You:', user_input)
+            chat_history.append(('You', user_input))
 
-            # Fetch and display responses from Snowflake
-            responses = fetch_responses(user_input)
-            for response in responses:
-                st.write('Chatbot:', response)
+            # Generate bot response (you can replace this with your actual chatbot logic)
+            bot_response = "I'm just a simple bot, but I'm learning!"
+            chat_history.append(('Bot', bot_response))
+
+    # Display chat history
+    for sender, message in chat_history:
+        if sender == 'You':
+            st.text_input(sender + ':', message, disabled=True)
+        else:
+            st.text_area(sender + ':', message, disabled=True)
 
 if __name__ == "__main__":
     main()
