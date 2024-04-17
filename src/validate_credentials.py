@@ -8,7 +8,7 @@ df = conn.query("select current_warehouse()")
 st.write(df)
 
 ## Validate OpenAI connection ##
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = OpenAI(api_key=st.secrets["sk-proj-HeAnmaS6COEPXK8NIJWzT3BlbkFJpJbVQxGCwrcIPv1DQq7c"])
 
 completion = client.chat.completions.create(
   model="gpt-3.5-turbo",
