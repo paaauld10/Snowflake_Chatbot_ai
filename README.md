@@ -51,4 +51,4 @@ src/test_frosty.py::test_prompts PASSED [ 66%]
 src/test_frosty.py::test_frosty_app PASSED [100%]
 
 ================ 3 passed in 1.37s ================
-```
+``` 
